@@ -166,7 +166,7 @@ gulp.task('sitemap', () => {
     .pipe(gulp.dest('./public'))
 })
 
-gulp.task('dev', gulp.parallel(startServer, gulp.series(['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'])), () => {
+gulp.task('default', gulp.parallel(startServer, gulp.series(['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'])), () => {
 
   watch('./src/scss/**/**', () => gulp.series('styles-dev'))
   watch('./src/js/**/**', () => gulp.series('scripts-dev', server.reload))
